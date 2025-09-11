@@ -13,6 +13,8 @@ import { ItemClaimSchema } from "../modules/claim/claim.validate";
 import { lostItemController } from "../modules/lostItem/lost.controller";
 import { utils } from "../utils/utils";
 import { adminStats } from "../utils/adminStats";
+import { aiSearchController } from "../modules/aiSearch/aiSearch.controller";
+import { aiSearchValidation } from "../modules/aiSearch/aiSearch.validate";
 
 const router = express.Router();
 ////////////////////////////////////////////////// user //////////////////////////////////////////////
@@ -155,5 +157,12 @@ router.put("/change-role/:id",auth(), userController.changeUserRole);
 
 // soft delete user
 router.delete("/delete-user/:id",auth(), userController.softDeleteUser);
+
+// AI search
+router.post(
+  "/ai-search",
+  validateRequest(aiSearchValidation.aiSearchSchema),
+  aiSearchController.aiSearch
+);
 
 export default router;
