@@ -28,6 +28,7 @@ This project demonstrates a complete implementation of a community service platf
 - 🔍 Found item registration with location and date tracking
 - 💬 Claim system for matching lost and found items
 - ⭐ Advanced search and filtering capabilities
+- 🤖 AI-powered search using Google Gemini API for intelligent item matching
 - 📊 Admin dashboard with comprehensive analytics
 - 👥 User management and role assignment
 - 📂 Category management for item organization
@@ -66,6 +67,11 @@ This project demonstrates a complete implementation of a community service platf
 - TypeScript
 - Prisma ORM
 - PostgreSQL
+
+**AI & Machine Learning:**
+- Google Gemini API
+- Natural language processing
+- Intelligent item matching
 
 **Authentication & Security:**
 - JWT (JSON Web Tokens)
@@ -131,6 +137,7 @@ lost-and-found/
 │   │   │   ├── register/    # Registration page
 │   │   │   ├── foundItems/  # Found items listing
 │   │   │   ├── lostItems/   # Lost items listing
+│   │   │   ├── aiSearch/    # AI-powered search page
 │   │   │   └── reportFoundItem/ # Report found item
 │   │   ├── dashboard/       # Dashboard components
 │   │   │   ├── pages/       # Dashboard pages
@@ -147,6 +154,7 @@ lost-and-found/
 │   │   │   │   ├── user/    # User management
 │   │   │   │   ├── foundItems/ # Found items
 │   │   │   │   ├── lostItem/ # Lost items
+│   │   │   │   ├── aiSearch/ # AI search functionality
 │   │   │   │   └── claim/   # Claims management
 │   │   │   ├── auth/        # Authentication
 │   │   │   ├── middlewares/ # Custom middlewares
@@ -170,6 +178,7 @@ DATABASE_URL=
 JWT_SECRET=
 CLIENT_URL=
 NODE_ENV=
+GEMINI_API_KEY=               # Google Gemini API key for AI search
 ```
 
 For the frontend, create a `.env` file with:
@@ -241,6 +250,11 @@ PUT /api/claims/:claimId        - Update claim status (with authentication)
 GET /api/admin/stats            - Get admin dashboard statistics (admin only)
 ```
 
+### AI Search
+```http
+POST /api/ai-search             - AI-powered search for lost and found items
+```
+
 ---
 
 ## 🏗️ Database Schema
@@ -277,6 +291,15 @@ All models include soft delete functionality and proper timestamp tracking.
 - Detailed claim forms with verification
 - Status tracking (Pending/Approved/Rejected)
 - Admin moderation capabilities
+
+### AI-Powered Search
+- Intelligent search using Google Gemini API
+- Natural language query processing
+- Context-aware item matching
+- Searches across both lost and found items simultaneously
+- AI reasoning and explanation for search results
+- Fallback to traditional text search if AI is unavailable
+- Enhanced user experience with modern dark theme interface
 
 ### Admin Dashboard
 - Comprehensive user management
