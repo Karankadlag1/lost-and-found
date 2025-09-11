@@ -25,7 +25,13 @@ const AiSearch: React.FC = () => {
     }
 
     try {
-      const result = await aiSearch({ query: searchQuery }).unwrap();
+      const response = await aiSearch({ query: searchQuery }).unwrap();
+      console.log("Full API response:", response);
+
+      // The response might be wrapped in a data property
+      const result = response.data || response;
+      console.log("Search results:", result);
+
       setSearchResults(result);
       toast.success("AI search completed successfully!");
     } catch (error: any) {
