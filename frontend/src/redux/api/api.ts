@@ -389,6 +389,17 @@ const api = baseApi.injectEndpoints({
       },
       providesTags: ["recentActivity"],
     }),
+
+    // AI search
+    aiSearch: builder.mutation({
+      query: (data: { query: string }) => {
+        return {
+          url: "/ai-search",
+          method: "POST",
+          body: data,
+        };
+      },
+    }),
   }),
 });
 
@@ -431,4 +442,5 @@ export const {
   useGetFaqsQuery,
   useCreateFaqMutation,
   useGetRecentActivityQuery,
+  useAiSearchMutation,
 } = api;
