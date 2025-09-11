@@ -20,6 +20,7 @@ import {
   FaSignOutAlt,
   FaList,
   FaTachometerAlt,
+  FaBrain,
 } from "react-icons/fa";
 
 export function Navbars() {
@@ -226,6 +227,13 @@ export function Navbars() {
             className="text-gray-300 hover:text-white hover:bg-gray-700/50 px-4 py-3 rounded-lg transition-all duration-200 font-medium"
           >
             Found items
+          </NavbarLink>
+          <NavbarLink
+            href="/ai-search"
+            className="text-gray-300 hover:text-white hover:bg-gray-700/50 px-4 py-3 rounded-lg transition-all duration-200 font-medium flex items-center space-x-2"
+          >
+            <FaBrain />
+            <span>AI Search</span>
           </NavbarLink>
           <NavbarLink
             href="#aboutUs"

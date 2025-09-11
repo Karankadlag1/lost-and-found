@@ -24,6 +24,7 @@ import MyFoundItems from "./dashboard/myFoundItems/MyFoundItems.tsx";
 import MyLostItems from "./dashboard/myLostItems/MyLostItems.tsx";
 import ReportLostItem from "./pages/reportlostItem/ReportLostItem.tsx";
 import ReportFoundItem from "./pages/reportFoundItem/ReportFoundItem.tsx";
+import AiSearch from "./pages/aiSearch/AiSearch.tsx";
 
 const router = createBrowserRouter([
   {
@@ -65,6 +66,10 @@ const router = createBrowserRouter([
       {
         path: "/reportFoundItem",
         element: <ReportFoundItem />,
+      },
+      {
+        path: "/ai-search",
+        element: <AiSearch />,
       },
     ],
   },
